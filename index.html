@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDUGATE - The Gateway to Your Global Education | Study Abroad Tunisia</title>
+    <meta name="description" content="EDUGATE is your trusted partner for international studies from Tunisia. Expert counseling for university admission, study abroad programs in Europe, North America and beyond.">
+    <meta name="keywords" content="study abroad Tunisia, international education counseling, university admission Tunisia, study programs abroad, education agency Tunisia">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #1e3a8a;
+            --secondary-blue: #3b82f6;
+            --light-blue: #dbeafe;
+            --dark-blue: #1e40af;
+            --white: #ffffff;
+            --light-gray: #f8fafc;
+            --dark-gray: #374151;
+            --text-gray: #6b7280;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-gray);
+        }
+
+        /* Header Styles */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary-blue);
+            text-decoration: none;
+            letter-spacing: 2px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--dark-gray);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: var(--secondary-blue);
+        }
+
+        .cta-button {
+            background: var(--secondary-blue);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: var(--primary-blue);
+            transform: translateY(-2px);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .mobile-menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--primary-blue);
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="%23ffffff" fill-opacity="0.1" points="0,1000 1000,0 1000,1000"/></svg>');
+            background-size: cover;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .hero-cta {
+            background: white;
+            color: var(--primary-blue);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 80px 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 3rem;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* About Section */
+        .about {
+            background: var(--light-gray);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            color: var(--primary-blue);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            color: var(--text-gray);
+            line-height: 1.8;
+        }
+
+        .values {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .value-tag {
+            background: var(--light-blue);
+            color: var(--primary-blue);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--secondary-blue);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--light-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+        }
+
+        .service-card h3 {
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .service-card p {
+            color: var(--text-gray);
+            line-height: 1.7;
+        }
+
+        /* Study Programs Section */
+        .programs {
+            background: var(--light-gray);
+        }
+
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .program-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .program-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .program-image {
+            height: 200px;
+            background: linear-gradient(45deg, var(--primary-blue), var(--secondary-blue));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
+        .program-content {
+            padding: 1.5rem;
+        }
+
+        .program-content h3 {
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .program-fields {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+
+        /* Gallery Section */
+         .gallery {
+             display: grid;
+             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+             gap: 1.5rem;
+             margin-top: 3rem;
+         }
+
+         .gallery-item {
+             background: white;
+             border-radius: 20px;
+             overflow: hidden;
+             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+             transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+             position: relative;
+         }
+
+         .gallery-item:hover {
+             transform: translateY(-8px) rotate(1deg);
+             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+         }
+
+         .gallery-item:nth-child(odd) {
+             transform: rotate(-1deg);
+         }
+
+         .gallery-item:nth-child(even) {
+             transform: rotate(1deg);
+         }
+
+         .gallery-item:nth-child(3n) {
+             grid-row: span 2;
+         }
+
+         .gallery-item:nth-child(5n) {
+             grid-column: span 2;
+         }
+
+         .gallery-image {
+             width: 100%;
+             height: 100%;
+             min-height: 200px;
+             overflow: hidden;
+             position: relative;
+         }
+
+         .gallery-item:nth-child(3n) .gallery-image {
+             min-height: 350px;
+         }
+
+         .gallery-item:nth-child(5n) .gallery-image {
+             min-height: 250px;
+         }
+
+         .gallery-image img {
+             width: 100%;
+             height: 100%;
+             object-fit: cover;
+             transition: all 0.4s ease;
+             filter: brightness(0.95) contrast(1.1);
+         }
+
+         .gallery-item:hover .gallery-image img {
+             transform: scale(1.1);
+             filter: brightness(1.05) contrast(1.2);
+         }
+
+         .gallery-item::before {
+             content: '';
+             position: absolute;
+             top: 0;
+             left: 0;
+             right: 0;
+             bottom: 0;
+             background: linear-gradient(45deg, rgba(52, 152, 219, 0.1), rgba(155, 89, 182, 0.1));
+             opacity: 0;
+             transition: opacity 0.3s ease;
+             z-index: 1;
+         }
+
+         .gallery-item:hover::before {
+             opacity: 1;
+         }
+
+        /* Contact Section */
+        .contact {
+            background: var(--light-gray);
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--primary-blue);
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--secondary-blue);
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: var(--secondary-blue);
+            color: white;
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background: var(--primary-blue);
+            transform: translateY(-2px);
+        }
+
+        .contact-info h3 {
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .office {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .office h4 {
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .office p {
+            color: var(--text-gray);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-details {
+            margin-top: 2rem;
+        }
+
+        .contact-details p {
+            margin-bottom: 0.5rem;
+            color: var(--text-gray);
+        }
+
+        .contact-details strong {
+            color: var(--primary-blue);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--primary-blue);
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section ul li a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section ul li a:hover {
+            color: white;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .mobile-menu-toggle {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .nav-container {
+                padding: 0 1rem;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            .hero-content {
+                padding: 0 1rem;
+            }
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="#home" class="logo">EDUGATE</a>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#programs">Study Programs</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="#contact" class="cta-button">Get Started</a>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>The Gateway to Your Global Education</h1>
+            <p>Empowering students from Tunisia and beyond to achieve their academic and professional dreams abroad.</p>
+            <a href="#contact" class="hero-cta">Start Your Journey</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="container">
+            <h2 class="section-title">About EDUGATE</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>EDUGATE is your trusted partner for international studies. With a strong foundation in academic counseling and career orientation, we connect students with world-class universities across Europe, North America, and beyond.</p>
+                    
+                    <h3>Our Mission</h3>
+                    <p>To guide and support students in shaping their academic and professional paths with integrity, knowledge, and excellence.</p>
+                    
+                    <div class="values">
+                        <span class="value-tag">Integrity</span>
+                        <span class="value-tag">Knowledge</span>
+                        <span class="value-tag">Support</span>
+                        <span class="value-tag">Opportunities</span>
+                        <span class="value-tag">Results</span>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://ik.imagekit.io/lif4gux2ri/WhatsApp%20Image%202025-09-21%20at%2014.16.01.jpeg?updatedAt=1758461155147" 
+                         alt="Global Education" 
+                         style="width: 100%; height: 400px; object-fit: cover; border-radius: 15px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <p class="section-subtitle">Comprehensive support for your international education journey</p>
+            
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <h3>Coaching & Orientation</h3>
+                    <p>With our solid experience, our advisors understand the professional world, identify future career paths, and guide students toward the best opportunities.</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <h3>Application File Preparation</h3>
+                    <p>We assist in preparing admission files, whether for preparatory language programs or direct university pre-enrollment.</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <h3>Registration & Follow-Up</h3>
+                    <p>Complete administrative management and monitoring of admission applications.</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <h3>Visa Assistance</h3>
+                    <p>Comprehensive support in preparing visa applications.</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <h3>Accommodation</h3>
+                    <p>Booking of student housing: university residences, private apartments, or host families, in partnership with our trusted institutions.</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <h3>Travel Organization</h3>
+                    <p>Flight reservations, airport welcome services, and continuous student assistance throughout their studies abroad.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Study Programs Section -->
+    <section id="programs" class="section programs">
+        <div class="container">
+            <h2 class="section-title">Study Programs & Destinations</h2>
+            <p class="section-subtitle">Explore world-class education opportunities across the globe</p>
+            
+            <div class="programs-grid">
+                <div class="program-card fade-in">
+                    <div class="program-image" style="background-image: url('https://images.unsplash.com/photo-1549144511-f099e773c147?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'); background-size: cover; background-position: center;"></div>
+                    <div class="program-content">
+                        <h3>France</h3>
+                        <p>Excellence in education with rich cultural heritage</p>
+                        <div class="program-fields">Business • Engineering • Arts & Design • Medicine</div>
+                    </div>
+                </div>
+                
+                <div class="program-card fade-in">
+                    <div class="program-image" style="background-image: url('https://images.unsplash.com/photo-1517935706615-2717063c2225?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'); background-size: cover; background-position: center;"></div>
+                    <div class="program-content">
+                        <h3>Canada</h3>
+                        <p>World-renowned universities and multicultural environment</p>
+                        <div class="program-fields">Computer Science • Finance • Engineering • Medicine</div>
+                    </div>
+                </div>
+                
+                <div class="program-card fade-in">
+                    <div class="program-image" style="background-image: url('https://images.unsplash.com/photo-1467269204594-9661b134dd2b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'); background-size: cover; background-position: center;"></div>
+                    <div class="program-content">
+                        <h3>Germany</h3>
+                        <p>Leading in technology and innovation</p>
+                        <div class="program-fields">Engineering • Computer Science • Business • Research</div>
+                    </div>
+                </div>
+                
+                <div class="program-card fade-in">
+                    <div class="program-image" style="background-image: url('https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'); background-size: cover; background-position: center;"></div>
+                    <div class="program-content">
+                        <h3>United Kingdom</h3>
+                        <p>Historic universities with global recognition</p>
+                        <div class="program-fields">Business • Arts • Medicine • Law</div>
+                    </div>
+                </div>
+                
+                <div class="program-card fade-in">
+                    <div class="program-image" style="background-image: url('https://images.unsplash.com/photo-1534351590666-13e3e96b5017?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'); background-size: cover; background-position: center;"></div>
+                    <div class="program-content">
+                        <h3>Netherlands</h3>
+                        <p>Diverse academic opportunities and cutting-edge research</p>
+                        <div class="program-fields">All Fields • Research • Innovation • Technology</div>
+                    </div>
+                </div>
+                
+                <div class="program-card fade-in">
+                    <div class="program-image" style="background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'); background-size: cover; background-position: center;"></div>
+                    <div class="program-content">
+                        <h3>Switzerland</h3>
+                        <p>Premium education in the heart of Europe</p>
+                        <div class="program-fields">Business • Finance • Hospitality • Engineering</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+     <section id="testimonials" class="section">
+         <div class="container">
+             <h2 class="section-title">Gallery</h2>
+             <p class="section-subtitle">Celebrating our students' achievements and memorable moments</p>
+             
+             <div class="gallery">
+                 <div class="gallery-item fade-in">
+                     <div class="gallery-image">
+                         <img src="https://ik.imagekit.io/lif4gux2ri/513928502_601695502973145_2081453850812878140_n%20-%20Copie.jpg?updatedAt=1758462066500" alt="Graduate Success Story">
+                     </div>
+                 </div>
+                 <div class="gallery-item fade-in">
+                     <div class="gallery-image">
+                         <img src="https://ik.imagekit.io/lif4gux2ri/513078099_601694426306586_5248779249110958972_n.jpg?updatedAt=1758462066078" alt="Graduate Success Story">
+                     </div>
+                 </div>
+                 <div class="gallery-item fade-in">
+                     <div class="gallery-image">
+                         <img src="https://ik.imagekit.io/lif4gux2ri/512666466_601694609639901_7666093224514206296_n.jpg?updatedAt=1758462065169" alt="Graduate Success Story">
+                     </div>
+                 </div>
+                 <div class="gallery-item fade-in">
+                     <div class="gallery-image">
+                         <img src="https://ik.imagekit.io/lif4gux2ri/513605701_601700032972692_631839291955024873_n.jpg?updatedAt=1758462063617" alt="Graduate Success Story">
+                     </div>
+                 </div>
+                 <div class="gallery-item fade-in">
+                     <div class="gallery-image">
+                         <img src="https://ik.imagekit.io/lif4gux2ri/513928502_601695502973145_2081453850812878140_n.jpg?updatedAt=1758462063227" alt="Graduate Success Story">
+                     </div>
+                 </div>
+                 <div class="gallery-item fade-in">
+                     <div class="gallery-image">
+                         <img src="https://ik.imagekit.io/lif4gux2ri/513689663_601699229639439_3532646274064107493_n.jpg?updatedAt=1758462063211" alt="Graduate Success Story">
+                     </div>
+                 </div>
+                 <div class="gallery-item fade-in">
+                     <div class="gallery-image">
+                         <img src="https://ik.imagekit.io/lif4gux2ri/513665375_601695299639832_2812291749561664453_n.jpg?updatedAt=1758462062915" alt="Graduate Success Story">
+                     </div>
+                 </div>
+                 <div class="gallery-item fade-in">
+                     <div class="gallery-image">
+                         <img src="https://ik.imagekit.io/lif4gux2ri/512708695_601695606306468_4468142252842474394_n.jpg?updatedAt=1758462062570" alt="Graduate Success Story">
+                     </div>
+                 </div>
+                 <div class="gallery-item fade-in">
+                     <div class="gallery-image">
+                         <img src="https://ik.imagekit.io/lif4gux2ri/GenevaBusinessSchool-278-1536x1024.jpg?updatedAt=1758462056117" alt="Graduate Success Story">
+                     </div>
+                 </div>
+                 <div class="gallery-item fade-in">
+                     <div class="gallery-image">
+                         <img src="https://ik.imagekit.io/lif4gux2ri/DSC_4389-1-1024x683.jpg?updatedAt=1758462052230" alt="Graduate Success Story">
+                     </div>
+                 </div>
+                 <div class="gallery-item fade-in">
+                     <div class="gallery-image">
+                         <img src="https://ik.imagekit.io/lif4gux2ri/GBSGE-435-1024x681.jpg?updatedAt=1758462052227" alt="Graduate Success Story">
+                     </div>
+                 </div>
+                 <div class="gallery-item fade-in">
+                     <div class="gallery-image">
+                         <img src="https://ik.imagekit.io/lif4gux2ri/DSC_4946-1-1024x683.jpg?updatedAt=1758462051849" alt="Graduate Success Story">
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <p class="section-subtitle">Ready to start your international education journey?</p>
+            
+            <div class="contact-content">
+                <div class="contact-info" style="max-width: 1000px; margin: 0 auto;">
+                    <h3>Get in Touch</h3>
+                    
+                    <div style="display: flex; gap: 3rem; align-items: flex-start; flex-wrap: wrap; margin-top: 2rem;">
+                        <div style="flex: 1; min-width: 300px;">
+                            
+                            
+                            <div class="contact-details">
+                                <p><strong>Email:</strong> contact@edugateagency.com</p>
+                            </div>
+                        </div>
+                        
+                        <div style="flex: 1; min-width: 350px;">
+                            <div class="map-container">
+                                <h4 style="color: var(--primary-blue); margin-bottom: 1rem;">Find Us on Map</h4>
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3192.4675267002876!2d10.208874900000001!3d36.8552266!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12fd352659d3b851%3A0xfb87d9a3d8cd4d60!2sAssurances%20PYRAMIDE%20COURTAGE!5e0!3m2!1sen!2stn!4v1758543259996!5m2!1sen!2stn" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>EDUGATE</h3>
+                    <p>Your gateway to global education opportunities. Empowering students to achieve their academic dreams abroad.</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon">f</a>
+                        <a href="#" class="social-icon">i</a>
+                        <a href="#" class="social-icon">t</a>
+                        <a href="#" class="social-icon">in</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#programs">Study Programs</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#services">Coaching & Orientation</a></li>
+                        <li><a href="#services">Application Preparation</a></li>
+                        <li><a href="#services">Visa Assistance</a></li>
+                        <li><a href="#services">Accommodation</a></li>
+                        <li><a href="#services">Travel Organization</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Study Destinations</h3>
+                    <ul>
+                        <li><a href="#programs">France</a></li>
+                        <li><a href="#programs">Canada</a></li>
+                        <li><a href="#programs">Germany</a></li>
+                        <li><a href="#programs">United Kingdom</a></li>
+                        <li><a href="#programs">Netherlands</a></li>
+                        <li><a href="#programs">Switzerland</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 EDUGATE. All rights reserved. | Study Abroad Tunisia | International Education Counseling</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+                // Close mobile menu if open
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+                header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.15)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            }
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Removed form submission handler
+
+        // Add some interactive hover effects
+        document.querySelectorAll('.service-card, .program-card, .testimonial-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Initialize animations
+        window.addEventListener('load', () => {
+            // Add initial fade-in class to elements
+            document.querySelectorAll('.service-card, .program-card, .testimonial-card').forEach((el, index) => {
+                el.style.animationDelay = `${index * 0.1}s`;
+            });
+        });
+    </script>
+</body>
+</html>
